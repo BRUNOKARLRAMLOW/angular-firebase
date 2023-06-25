@@ -1,0 +1,177 @@
+<!-- HEADER -->
+
+<div class="pt-3 pb-2 mb-3 border-bottom">
+
+    <h2 class="h2">Adicionar Carro</h2>
+  
+  </div>
+  
+  <!-- HEADER -->
+  
+  <!-- FORMULÁRIO -->
+  
+  <form [formGroup]="contatoForm" (ngSubmit)="submitForm()" novalidate>
+  
+    <!-- ADAPTA O TAMANHO DO FORMULÁRIO DE ACORDO COM A TELA-->
+  
+    <div class="row">
+  
+      <div class="col-lg-6 col-md-8 col-sm-12">
+  
+        <!-- LINHA 1 - CAMPO NOME -->
+  
+        <div class="row">
+  
+          <div class="col-md-12 mb-3">
+  
+            <label
+  
+              [ngClass]="{'text-danger': marca?.touched && marca?.invalid}"
+  
+              for="marca" class="form-label">Marca</label>
+  
+            <input
+  
+              [ngClass]="{'is-invalid': marca?.touched && marca?.invalid, 'is-valid': marca?.touched && marca?.valid}"
+  
+              type="text" id="marca" class="form-control" formControlName="marca" required/>
+  
+            <!-- errors-->
+  
+            <div class="invalid-feedback"><sup>*</sup>Marca Obrigatória</div>
+  
+          </div>
+  
+        </div>
+  
+        <!-- LINHA 1 - CAMPO NOME -->
+
+        <!-- LINHA 1 - CAMPO NOME -->
+
+        <div class="row">
+  
+          <div class="col-md-12 mb-3">
+  
+            <label
+  
+              [ngClass]="{'text-danger': modelo?.touched && modelo?.invalid}"
+  
+              for="marca" class="form-label">Modelo</label>
+  
+            <input
+  
+              [ngClass]="{'is-invalid': modelo?.touched && modelo?.invalid, 'is-valid': modelo?.touched && modelo?.valid}"
+  
+              type="text" id="modelo" class="form-control" formControlName="modelo" required/>
+  
+            <!-- errors-->
+  
+            <div class="invalid-feedback"><sup>*</sup>Modelo Obrigatório</div>
+  
+          </div>
+  
+        </div>
+
+        <!-- LINHA 1 - CAMPO NOME -->
+  
+        <!-- LINHA 2 - CAMPO ano -->
+  
+        <div class="row">
+  
+          <div class="col-md-12 mb-3">
+  
+            <label
+  
+              [ngClass]="{'text-danger': ano?.touched && ano?.invalid}"
+  
+              for="ano" class="form-label">ano</label>
+  
+            <input
+  
+              [ngClass]="{'is-invalid': ano?.touched && ano?.invalid, 'is-valid': ano?.touched && ano?.valid}"
+  
+              type="number"
+  
+              formControlName="ano"
+  
+              class="form-control"
+  
+              required
+  
+            />
+  
+            <!-- Validation FeedBack -->
+  
+            <div class="invalid-feedback"><sup>*</sup>Ano Obrigatório</div>
+  
+          </div>
+  
+        </div>
+  
+        <!-- LINHA 2 - CAMPO ano -->
+  
+        <!-- LINHA 3 - CAMPO placa -->
+  
+        <div class="row">
+  
+          <div class="col-md-12 mb-3">
+  
+            <label
+  
+              [ngClass]="{'text-danger': placa?.touched && placa?.invalid}"
+  
+              for="placa" class="form-label">placa</label>
+  
+            <input
+  
+              [ngClass]="{'is-invalid': placa?.touched && placa?.invalid, 'is-valid': placa?.touched && placa?.valid}"
+  
+              type="text"
+  
+              formControlName="placa"
+  
+              class="form-control"
+  
+              required
+  
+            />
+  
+            <!-- Validation FeedBack -->
+  
+            <div class="invalid-feedback"><sup>*</sup>Placa Obrigatória</div>
+  
+          </div>
+  
+        </div>
+  
+        <!-- LINHA 3 - CAMPO placa -->
+  
+        <!-- BOTÕES DO FORMULÁRIO -->
+  
+        <div class="form-group text-end">
+  
+          <button type="button" class="btn btn-secondary mx-2" (click)="resetForm()">
+  
+            Limpar
+  
+          </button>
+  
+          <button type="submit" class="btn btn-success mx-2" [disabled]="!contatoForm.valid">
+  
+            Adicionar Contato
+  
+          </button>
+  
+        </div>
+  
+        <!-- BOTÕES DO FORMULÁRIO -->
+  
+      </div>
+  
+    </div>
+  
+   <!-- ADAPTA O TAMANHO DO FORMULÁRIO DE ACORDO COM A TELA-->
+  
+  </form>
+  
+  <!-- FORMULÁRIO -->

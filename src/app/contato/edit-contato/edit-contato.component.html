@@ -1,0 +1,129 @@
+<div class="pt-3 pb-2 mb-3 border-bottom">
+
+    <h2 class="h2">Editar Carro</h2>
+  
+  </div>
+  
+  
+  
+  <form [formGroup]="contatoForm" (ngSubmit)="submitForm()" novalidate>
+  
+    <div class="row">
+  
+      <div class="col-lg-6 col-md-8 col-sm-12">
+  
+        <div class="row">
+  
+          <div class="col-md-12 mb-3">
+  
+            <label>Marca</label>
+  
+            <input type="text" id="marca" class="form-control" formControlName="marca" required/>
+  
+            <!-- errors-->
+  
+            <p *ngIf="marca?.touched && marca?.invalid" class="error">
+  
+              <sup>*</sup>Marca Obrigatória
+  
+            </p>
+  
+          </div>
+  
+        </div>
+
+        <div class="row">
+  
+          <div class="col-md-12 mb-3">
+  
+            <label>Modelo</label>
+  
+            <input type="text" id="modelo" class="form-control" formControlName="modelo" required/>
+  
+            <!-- errors-->
+  
+            <p *ngIf="modelo?.touched && modelo?.invalid" class="error">
+  
+              <sup>*</sup>Modelo Obrigatório
+  
+            </p>
+  
+          </div>
+  
+        </div>
+  
+        <div class="row">
+  
+          <div class="col-md-12 mb-3">
+  
+            <label>Ano</label>
+  
+            <input
+  
+              type="number"
+  
+              formControlName="ano"
+  
+              class="form-control"
+  
+              required
+  
+            />
+  
+            <!-- errors-->
+  
+            <p *ngIf="ano?.touched && ano?.invalid" class="error">
+  
+              <sup>*</sup>Informe o Ano
+  
+            </p>
+  
+          </div>
+  
+        </div>
+  
+        <div class="row">
+  
+          <div class="col-md-12 mb-3">
+  
+            <label>Placa</label>
+  
+            <input
+  
+              type="text"
+  
+              formControlName="placa"
+  
+              class="form-control"
+  
+              required
+  
+            />
+  
+            <!-- errors-->
+  
+            <p *ngIf="placa?.touched && placa?.invalid" class="error">
+  
+              <sup>*</sup>Informe a Placa
+  
+            </p>
+  
+          </div>
+  
+        </div>
+  
+        <div class="form-group text-end">
+  
+          <button type="submit" class="btn btn-info mx-2" [disabled]="!contatoForm.valid">
+  
+            Editar Carro
+  
+          </button>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </form>
